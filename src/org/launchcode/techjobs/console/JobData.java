@@ -71,7 +71,7 @@ public class JobData {
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
 
         for (HashMap<String, String> row : allJobs) {
-
+            //modified code to make search case insensitive; we have String aValue, and can compare with String value using equalsIgnoreCase method
             String aValue = row.get(column);
             if (aValue.equalsIgnoreCase(value)){
                 jobs.add(row);
@@ -91,6 +91,7 @@ public class JobData {
 
         for (HashMap<String, String> row : allJobs) {
             for (String sValue : row.values()){
+                //modified to make search case insensitive by converting each value to a string, then using method equalsIgnoreCase to compare two strings
                 if (sValue.equalsIgnoreCase(value)) {
                     jobs.add(row);
                     break;

@@ -62,7 +62,8 @@ public class TechJobs {
                 String searchTerm = in.nextLine();
 
                 if (searchField.equals("all")) {
-                    System.out.println("Search all fields not yet implemented.");
+                    printJobs(JobData.findByValue(searchTerm));
+
                 } else {
                     printJobs(JobData.findByColumnAndValue(searchField, searchTerm));
                 }
@@ -114,7 +115,7 @@ public class TechJobs {
 
 
         if (someJobs.size() == 0) {
-            System.out.println("No jobbie-jobs to show, darling!");
+            System.out.println("No jobbie-jobs to show, please try again!");
         } else {
             for (int i = 0; i < someJobs.size(); i++) {
                 System.out.println("*****");
@@ -123,18 +124,8 @@ public class TechJobs {
                 }
                 System.out.println("*****");
                 System.out.println();
-                //System.out.println(someJobs.get(i) + ", ");
             }
+            System.out.println(someJobs.size() + " jobs found.");
         }
     }
 }
-
-/*
-*****
-position type: Data Scientist / Business Intelligence
-name: Sr. IT Analyst (Data/BI)
-employer: Bull Moose Industries
-location: Saint Louis
-core competency: Statistical Analysis
-*****
- */
